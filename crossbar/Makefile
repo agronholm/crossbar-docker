@@ -49,15 +49,6 @@ publish: build
 
 
 #
-# Install Qemu (this is needed for cross-building armhf/aarch64 on amd64)
-#
-qemu_deps:
-	mkdir -p ./.qemu
-	cp /usr/bin/qemu-aarch64-static ./.qemu
-	cp /usr/bin/qemu-arm-static ./.qemu
-
-
-#
 # Copy over current AutobahnJS into the default node directory
 # we bake into the images
 #
