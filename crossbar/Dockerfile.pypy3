@@ -1,8 +1,8 @@
 FROM debian:jessie
 
 ARG CROSSBAR_VERSION
-ARG PYPY_VERSION=5.7.1
-ARG PYPY_SHA256SUM=2abaa54d88c9b70b64c37083e7e430a1d3a8f78f8de92e484a988b7aca1e50a7
+ARG PYPY_VERSION
+ARG PYPY_SHA256SUM
 
 # install dependencies and Crossbar.io
 RUN apt-get update \

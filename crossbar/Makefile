@@ -127,6 +127,8 @@ build_amd64_pypy3:
 		--build-arg BUILD_DATE=${BUILD_DATE} \
 		--build-arg CROSSBAR_VCS_REF=${CROSSBAR_VCS_REF} \
 		--build-arg CROSSBAR_VERSION=${CROSSBAR_VERSION} \
+		--build-arg PYPY_VERSION=5.8.0 \
+		--build-arg PYPY_SHA256SUM=57d871a7f1135719c138cee4e3533c3275d682a76a40ff668e95150c65923035 \
 		-t crossbario/crossbar:pypy3 \
 		-t crossbario/crossbar:pypy3-${CROSSBAR_VERSION} \
 		-f Dockerfile.pypy3 .
