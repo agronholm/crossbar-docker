@@ -95,7 +95,7 @@ build_amd64_cpy3:
 		-t crossbario/crossbar:latest \
 		-t crossbario/crossbar:cpy3 \
 		-t crossbario/crossbar:cpy3-${CROSSBAR_VERSION} \
-		-f ./x86_64/Dockerfile.cpy3 .
+		-f Dockerfile.cpy3 .
 
 build_armhf_cpy3:
 	# enforce auto-generating a new key when using the images
@@ -104,10 +104,11 @@ build_armhf_cpy3:
 		--build-arg BUILD_DATE=${BUILD_DATE} \
 		--build-arg CROSSBAR_VCS_REF=${CROSSBAR_VCS_REF} \
 		--build-arg CROSSBAR_VERSION=${CROSSBAR_VERSION} \
+		--build-arg IMAGE_PREFIX=arm32v7/ \
 		-t crossbario/crossbar-armhf:latest \
 		-t crossbario/crossbar-armhf:cpy3 \
 		-t crossbario/crossbar-armhf:cpy3-${CROSSBAR_VERSION} \
-		-f ./armhf/Dockerfile.cpy3 .
+		-f Dockerfile.cpy3 .
 
 build_aarch64_cpy3:
 	# enforce auto-generating a new key when using the images
@@ -116,10 +117,11 @@ build_aarch64_cpy3:
 		--build-arg BUILD_DATE=${BUILD_DATE} \
 		--build-arg CROSSBAR_VCS_REF=${CROSSBAR_VCS_REF} \
 		--build-arg CROSSBAR_VERSION=${CROSSBAR_VERSION} \
+		--build-arg IMAGE_PREFIX=aarch64/ \
 		-t crossbario/crossbar-aarch64:latest \
 		-t crossbario/crossbar-aarch64:cpy3 \
 		-t crossbario/crossbar-aarch64:cpy3-${CROSSBAR_VERSION} \
-		-f ./aarch64/Dockerfile.cpy3 .
+		-f Dockerfile.cpy3 .
 
 
 #
@@ -136,7 +138,7 @@ build_amd64_pypy3:
 		--build-arg CROSSBAR_VERSION=${CROSSBAR_VERSION} \
 		-t crossbario/crossbar:pypy3 \
 		-t crossbario/crossbar:pypy3-${CROSSBAR_VERSION} \
-		-f ./x86_64/Dockerfile.pypy3 .
+		-f Dockerfile.pypy3 .
 
 build_armhf_pypy3:
 	@echo "PyPy3 isn't available for armhf yet"
